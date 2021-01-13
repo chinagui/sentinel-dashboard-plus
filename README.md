@@ -65,6 +65,7 @@ $ java -Dserver.port=8080 \
 
 ```yaml
 spring:
+  cloud:
     sentinel:
       transport:
         dashboard: localhost:8080  # sentinel-dashboard 部署地址
@@ -74,7 +75,7 @@ spring:
             server-addr: localhost:8848  # nacos server 部署地址
             data-id: ${spring.application.name}-flow-rules  # 固定写法
             group-id: SENTINEL_GROUP  # 与部署 sentinel-dashboard 时的 nacos group 配置保持一致
-            namespace: 8b67d870-000d-4e1e-8124-fa7f506cec53  # 与部署 sentinel-dashboard 时的 nacos namespace 配置保持一致
+            namespace: f1f6d4b6-f85e-4048-a2e1-2d8827bebcd7  # 与部署 sentinel-dashboard 时的 nacos namespace 配置保持一致
             data-type: json
             rule-type: flow
         degrade:  # 配置熔断降级
@@ -82,7 +83,7 @@ spring:
             server-addr: localhost:8848
             data-id: ${spring.application.name}-degrade-rules
             group-id: SENTINEL_GROUP
-            namespace: 8b67d870-000d-4e1e-8124-fa7f506cec53
+            namespace: f1f6d4b6-f85e-4048-a2e1-2d8827bebcd7
             data-type: json
             rule-type: degrade
         authority:  # 配置授权
@@ -90,7 +91,7 @@ spring:
             server-addr: localhost:8848
             data-id: ${spring.application.name}-auth-rules
             group-id: SENTINEL_GROUP
-            namespace: 8b67d870-000d-4e1e-8124-fa7f506cec53
+            namespace: f1f6d4b6-f85e-4048-a2e1-2d8827bebcd7
             data-type: json
             rule-type: authority
 ```
